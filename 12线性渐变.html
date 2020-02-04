@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>渐变</title>
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+        background-image: linear-gradient(45deg, blue 80%, red 90%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 线性渐变 linear-gradient 
+    参数:原点 角度 
+    一般是当做背景图片用。替代url 直接linear-gradient
+    (color,color) 从上向下
+
+    (to right,color,color) 从一个方向
+    (45deg,color,color) 从一个角度
+    (to right,color,color,color,color) 从一个方向多个颜色均匀渐变
+    (to right ,color 百分比,color 百分比) 从百分之多少开始渐变到百分之多少
+  -->
+    <div class="box"></div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>伪元素</title>
+    <!-- CS3伪元素用:: -->
+    <style>
+      .demo {
+        border: 1px solid #ccc;
+        width: 300px;
+        margin: 50px auto;
+        padding: 10px;
+      }
+      .demo::first-letter {
+        font-size: 40px;
+        font-weight: 900;
+        float: left;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      .box::before {
+        /* content: url("../img.jpg"); 注意毕竟不是图片*/
+        content: "";
+        background-image: url("../img.jpg");
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ::C3用两个冒号伪元素
+        ::first-letter 第一个字，如果需要下沉，可以浮动
+        ::first-line 第一行 
+    重点:分别是befor和aftre
+    css中一定要加content
+
+    -->
+    <div class="demo">
+      这是一段话啊这是一段话啊这是一段话啊这是一段话啊这是一段话啊
+      这是一段话啊这是一段话啊这是一段话啊这是一段话啊
+      这是一段话啊这是一段话啊这是一段话啊 这是一段话啊
+    </div>
+
+    <div class="box">
+      这是一段文字啊
+    </div>
+  </body>
+</html>

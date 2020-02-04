@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Loading动画</title>
+    <style>
+      .box div {
+        width: 10px;
+        height: 100px;
+        background-color: red;
+        float: left;
+        margin: 50px;
+        /* animation: myloading 2s 1s infinite; */
+      }
+      .box div:nth-child(1) {
+        animation: myloading 1s infinite;
+      }
+      .box div:nth-child(2) {
+        animation: myloading 1s 0.2s infinite;
+      }
+      .box div:nth-child(3) {
+        animation: myloading 1s 0.4s infinite;
+      }
+      .box div:nth-child(4) {
+        animation: myloading 1s 0.6s infinite;
+      }
+
+      @keyframes myloading {
+        0%,
+        100% {
+          transform: scaleY(1);
+        }
+        50% {
+          transform: scaleY(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

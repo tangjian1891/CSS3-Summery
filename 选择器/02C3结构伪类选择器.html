@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>C3结构伪类选择器</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .demo li {
+        float: left;
+        list-style: none;
+      }
+      .demo {
+        border: 1px solid #ccc;
+      }
+      .clearfix {
+        clear: both;
+        overflow: auto;
+      }
+      /* .demo li:nth-child(1) {
+        background-color: red;
+      } */
+      .demo li:nth-of-type(1) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      :first-child 选择某个元素的第一个子元素
+      :last-child 选择某个元素的最后一个子元素
+      :nth-child(odd/even/2n+1/2n/n+5)选择某个元素的一个或多个特定的子元素
+      :nth-last-child() 从最后一个算
+      限定 为指定元素 
+        :nth-of-type() 排除其他元素
+        :nth-last-of-type()从最后一个计算
+        :first-of-type 指定第一个
+        :only-child 选择是它的父元素中只有唯一一个子元素时
+     -->
+    <div class="demo clearfix">
+      <ul>
+        <p>会不会上色</p>
+        <li><a href="1">1</a></li>
+        <li><a href="2">2</a></li>
+        <li><a href="3">3</a></li>
+        <li><a href="4">4</a></li>
+        <li><a href="5">5</a></li>
+        <li><a href="6">6</a></li>
+        <li><a href="7">7</a></li>
+        <li><a href="8">8</a></li>
+        <li><a href="9">9</a></li>
+        <li><a href="10">10</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

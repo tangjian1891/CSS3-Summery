@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>颜色模式</title>
+    <style>
+      .opacity li,
+      .rgba li {
+        width: 50px;
+        height: 50px;
+        float: left;
+        list-style: none;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 50px;
+      }
+      .opacity li:nth-child(1) {
+        opacity: 1;
+      }
+      .opacity li:nth-child(2) {
+        opacity: 0.8;
+      }
+      .opacity li:nth-child(3) {
+        opacity: 0.6;
+      }
+      .opacity li:nth-child(4) {
+        opacity: 0.4;
+      }
+      .opacity li:nth-child(5) {
+        opacity: 0.2;
+      }
+      .opacity li:nth-child(6) {
+        opacity: 0;
+      }
+      .rgba li:nth-child(1) {
+        /* background-color: rgba(red, 0, 0, 1); */
+        background-color: rgba(255, 0, 0, 1);
+      }
+      .rgba li:nth-child(2) {
+        background-color: rgba(255, 0, 0, 0.8);
+      }
+      .rgba li:nth-child(3) {
+        background-color: rgba(255, 0, 0, 0.6);
+      }
+      .rgba li:nth-child(4) {
+        background-color: rgba(255, 0, 0, 0.4);
+      }
+      .rgba li:nth-child(5) {
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      .rgba li:nth-child(6) {
+        background-color: rgba(255, 0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- rgba  红 绿 蓝 Alpha 取值0-1-->
+    <!-- rgba 只会北京虚化透明 和  opacity  会将内部元素内容一并透明化-->
+    <div class="opacity">
+      <ul>
+        <li>1</li>
+        <li>0.8</li>
+        <li>0.6</li>
+        <li>0.4</li>
+        <li>0.2</li>
+        <li>0</li>
+      </ul>
+    </div>
+
+    <div class="rgba">
+      <ul>
+        <li>1</li>
+        <li>0.8</li>
+        <li>0.6</li>
+        <li>0.4</li>
+        <li>0.2</li>
+        <li>0</li>
+      </ul>
+    </div>
+  </body>
+</html>

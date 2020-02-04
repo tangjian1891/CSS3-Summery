@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>过渡效果</title>
+    <style>
+      .box img:hover {
+        transform: scale(1.1);
+      }
+      .box img {
+        transition: all 0.6s ease;
+      }
+      .transform img {
+        transition: all 0.6s ease;
+      }
+      .transform img:hover {
+        transform: translateX(20px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 过渡效果:从一个形态变为另外一个形态。可以是边框，颜色等等，有规律的变换 -->
+    <!-- 复合属性:
+        property:过渡的属性。默认是所有
+        duration:过渡时间 
+        delay:延迟执行时间  :好处就是快速滑动时不会有影响
+        timing-function:过渡函数 默认是ease  linear匀速  ease-in慢-快  ease-out快-慢
+    -->
+    <!-- 配合一下transform:scale(1.1) transition:all 1s 0.5s ease -->
+
+    <div class="box">
+      <img src="./img1.jpg" alt="" />
+    </div>
+
+    <div class="transform">
+      <img src="./img1.jpg" alt="" />
+    </div>
+  </body>
+</html>

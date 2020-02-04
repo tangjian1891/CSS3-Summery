@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>C3动态伪类选择器</title>
+    <!-- link 默认每点击过的颜色,visited 已经点击过的颜色,hover 鼠标移入的颜色,active 鼠标点下的颜色 -->
+    <!-- UI元素状态伪类选择器 -->
+    <style>
+      a:link {
+        color: #666;
+      }
+      a:visited {
+        color: #f00;
+      }
+      a:hover {
+        color: #000;
+      }
+      a:active {
+        color: blue;
+      }
+
+      input:enabled {
+        background-color: green;
+      }
+      input:disabled {
+        background-color: red;
+      }
+      input:checked {
+        width: 20px;
+        height: 20px;
+        color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="">点击按钮</a>
+    <hr />
+    <input type="text" name="" disabled id="" /><br />
+    <input type="text" name="" id="" />
+    <hr />
+    <input type="checkbox" name="123" id="" />
+    <input type="checkbox" name="123" id="" />
+  </body>
+</html>

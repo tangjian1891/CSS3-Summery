@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Loading动画2</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        animation: mymove 1s -1s infinite;
+        position: relative;
+      }
+      .box2 {
+        top: 0;
+        position: absolute;
+        content: "";
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        border-radius: 50%;
+        animation: mymove2 1s -1s infinite;
+        z-index: 2;
+      }
+      @keyframes mymove {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
+      @keyframes mymove2 {
+        0%,
+        100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box2"></div>
+  </body>
+</html>

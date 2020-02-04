@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>径向渐变</title>
+    <style>
+      .linear {
+        width: 300px;
+        height: 300px;
+        margin: 100px;
+        /* 重复渐变:加上一个repeating */
+        background-image: repeating-linear-gradient(
+          red 0px,
+          green 20px,
+          orange 30px
+        );
+      }
+      .radial {
+        width: 300px;
+        height: 300px;
+        margin: 100px;
+        /* 重复渐变:加上一个repeating */
+        background-image: repeating-radial-gradient(blue 10%, #fff 20%);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- radial-gradient 径向渐变 -->
+    <div class="linear"></div>
+    <!-- 画一个靶纸 -->
+    <div class="radial"></div>
+  </body>
+</html>
