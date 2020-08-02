@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淡入淡出</title>
+    <style>
+      @import url(./base.css);
+      .el-fade-in-linear-enter-active,
+      .el-fade-in-linear-leave-active {
+        transition: opacity 200ms linear;
+        /* transition: opacity 200ms ease; */
+      }
+      .el-fade-in-linear-enter,
+      .el-fade-in-linear-leave,
+      .el-fade-in-linear-leave-active {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="btn" v-on:click="show = !show">
+        Toggle
+      </button>
+
+      <!-- 过渡 -->
+      <transition name="el-fade-in-linear">
+        <p v-if="show" class="transition-box">hello</p>
+      </transition>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          show: true,
+        },
+      });
+    </script>
+  </body>
+</html>

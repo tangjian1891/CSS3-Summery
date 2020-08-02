@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>缩放消失，底部到顶部</title>
+    <style>
+      @import url(./base.css);
+      .el-zoom-in-top-enter-active,
+      .el-zoom-in-top-leave-active {
+        opacity: 1;
+        transform: scaleY(1);
+        transition:  transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        /* 分别对应X Y .关Y就行  Y改对应的就是顶部，底部 中间*/
+        transform-origin: center top;
+      }
+      .el-zoom-in-top-enter,
+      .el-zoom-in-top-leave-active {
+        opacity: 0;
+        transform: scaleY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="btn" v-on:click="show = !show">
+        Toggle
+      </button>
+
+      <!-- 过渡 -->
+      <transition name="el-zoom-in-top">
+        <p v-if="show" class="transition-box">hello</p>
+      </transition>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          show: true,
+        },
+      });
+    </script>
+  </body>
+</html>

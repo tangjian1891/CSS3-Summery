@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>遮罩mask</title>
+    <style>
+      .mask {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        opacity: 0.5;
+        z-index: 2019;
+        display: none;
+      }
+      .visible{
+          display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn"  >
+      Toggle
+    </button>
+    <div class="mask"></div>
+    <script>
+
+      const btn= document.querySelector(".btn")
+      const mask= document.querySelector(".mask")
+      btn.addEventListener("click",function(){
+          mask.classList.toggle('visible')
+      })
+      mask.addEventListener("click",function(){
+          mask.classList.toggle('visible')
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>缩放。X轴</title>
+    <style>
+      @import url(./base.css);
+      .el-zoom-in-center-enter-active,
+      .el-zoom-in-center-leave-active {
+        /* 这里opcity和transform。如果有别的属性，需要自己单个写 */
+        transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+      }
+      .el-zoom-in-center-enter,
+      .el-zoom-in-center-leave-active {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="btn" v-on:click="show = !show">
+        Toggle
+      </button>
+
+      <!-- 过渡 -->
+      <transition name="el-zoom-in-center">
+        <p v-if="show" class="transition-box">hello</p>
+      </transition>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          show: true,
+        },
+      });
+    </script>
+  </body>
+</html>
