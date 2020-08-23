@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let timmer = setTimeout(() => {
+        console.log("哈啊");
+        timmer=null
+      }, 1000);
+
+      console.log(timmer);
+      clearTimeout(timmer);
+      console.log(timmer);
+    </script>
+  </body>
+</html>

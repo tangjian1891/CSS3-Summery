@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节流throttle</title>
+  </head>
+  <body>
+    <div class="btn">触发节流</div>
+    <script>
+      const btn = document.querySelector(".btn");
+      // 相比之下，大部分业务节流更加需要立即触发
+      function _throttle(fn, await) {
+        let timmer = null;
+        return function () {
+          if (timmer) return;
+          // 没有值就立即触发.也可以延迟放在里面执行，写法多种多样
+          fn.apply(this, arguments);
+          timmer = setTimeout(() => {
+            timmer = null;
+          }, await);
+        };
+      }
+
+      function foo() {
+        console.log("节流吧");
+      }
+      const execute = _throttle(foo, 2000);
+
+      btn.addEventListener("click", function () {
+        execute();
+      });
+    </script>
+  </body>
+</html>

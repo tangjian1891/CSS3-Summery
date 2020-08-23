@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖立即触发</title>
+  </head>
+  <body>
+    <div class="btn">点击触发</div>
+    <script>
+      const btn = document.querySelector(".btn");
+      // 立即执行的防抖函数
+      function _debounce(fn, await) {
+        let timmer = null;
+        return function () {
+          // 如果timmer是null,理解执行即可
+          if (!timmer) {
+            // 直接执行
+            fn.apply(this, arguments); //
+          }
+          timmer && clearTimeout(timmer);
+          timmer = setTimeout(() => {
+            // 注意这里的调用，利用apply修改fn的执行内部this
+            fn.apply(this, arguments);
+            timmer = null; //立即执行防抖有必要手动置为空
+          }, await);
+          console.log("看看时间种子", timmer);
+        };
+      }
+      function foo() {
+        console.log("无限执行");
+      }
+      const execute = _debounce(foo, 1000);
+      btn.addEventListener("click", function () {
+        execute.apply(this, arguments);
+      });
+    </script>
+  </body>
+</html>

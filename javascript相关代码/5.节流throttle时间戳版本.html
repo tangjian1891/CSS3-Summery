@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="btn">触发节流</div>
+    <script>
+      const btn = document.querySelector(".btn");
+      // 利用时间戳版本
+      function _throttle(fn, await) {
+        let now = 0;
+        let last = 0;
+        return function () {
+          now = new Date().getTime();
+          if (now - last > await) {
+            fn.apply(this, arguments);
+            last = now;
+          }
+        };
+      }
+
+      function foo() {
+        console.log("节流吧");
+      }
+      const execute = _throttle(foo, 2000);
+
+      btn.addEventListener("click", function () {
+        execute();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖非立即触发</title>
+  </head>
+  <body>
+    <div class="btn">点击触发</div>
+    <script>
+      const btn = document.querySelector(".btn");
+      // 简单版本 。做好参数已经this
+      function _debounce(fn, wait) {
+        let timmer = null;
+        return function () {
+          timmer && clearTimeout(timmer);
+          timmer = setTimeout(() => {
+            console.log(this); //DOM元素
+            fn.apply(this, arguments);
+            timmer = null; //手动将时间种子置空。简单版防抖其实没必要
+          }, wait);
+          console.log(timmer);
+        };
+      }
+
+      function execute(age, name) {
+        console.log(age);
+        console.log(name);
+        console.log("我想无限触发");
+      }
+      const _execute = _debounce(execute, 1000);
+      btn.addEventListener("click", function () {
+        _execute.call(this, 18, "你猜我是谁");
+      });
+    </script>
+  </body>
+</html>
