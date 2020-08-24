@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>防抖触发可控制</title>
-</head>
-<body>
-  <script>
-    // TODO
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>防抖触发可控制</title>
+  </head>
+  <body>
+    <div class="btn">点击防抖</div>
+    <script>
+      const btn = document.querySelector(".btn");
+      // 根据第三个参数。决定是否有立即执行的动作
+      function _debounce(fn, await = 1000, immediately = false) {
+        let timmer = null;
+        return function () {
+          //  immediately 是否立即执行
+          if (immediately && timmer === null) {
+            // 立即执行
+            fn.apply(this, arguments);
+            timmer = setTimeout(() => {}, await); //模拟一个空的等待期
+            return;
+          }
+          timmer && clearTimeout(timmer);
+          timmer = setTimeout(() => {
+            fn.apply(this, arguments);
+            timmer = null;
+          }, await);
+        };
+      }
+      function foo() {
+        console.log("无限执行");
+      }
+      const execute = _debounce(foo, 1000, true);
+      btn.addEventListener("click", function () {
+        execute.apply(this, arguments);
+      });
+    </script>
+  </body>
 </html>

@@ -17,6 +17,8 @@
           if (!timmer) {
             // 直接执行
             fn.apply(this, arguments); //
+            timmer = setTimeout(() => {}, await); //模拟一个空的等待期
+            return;
           }
           timmer && clearTimeout(timmer);
           timmer = setTimeout(() => {
